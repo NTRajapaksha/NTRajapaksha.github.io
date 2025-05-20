@@ -20,350 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
 
-    <style>
-      :root {
-        --primary-color: #4f46e5;
-        --secondary-color: #818cf8;
-        --accent-color: #6366f1;
-        --dark-color: #1e293b;
-        --light-color: #f8fafc;
-        --gradient-1: linear-gradient(135deg, #4f46e5 0%, #818cf8 100%);
-        --gradient-2: linear-gradient(135deg, #6366f1 0%, #a5b4fc 100%);
-      }
-
-      body {
-        background: linear-gradient(
-          135deg,
-          var(--light-color) 0%,
-          #e2e8f0 100%
-        );
-        color: var(--dark-color);
-        font-weight: 500;
-      }
-
-      .gradient-bg {
-        background: var(--gradient-1);
-      }
-
-      .gradient-text {
-        background: var(--gradient-1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .lead.text-muted {
-        font-weight: 500;
-        color: #4b5563 !important; /* Darker shade for better readability */
-        font-size: 1.1rem;
-        line-height: 1.8;
-      }
-
-      /* Home section title enhancements */
-      .hero-name {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        letter-spacing: -0.5px;
-        text-transform: none;
-      }
-
-      .hero-title {
-        font-family: "Poppins", sans-serif;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 1.25rem;
-      }
-
-      /* Enhanced text for project cards */
-      .project-card h3 {
-        font-weight: 600;
-        font-size: 1.4rem;
-      }
-
-      .project-card p {
-        font-weight: 500;
-        color: #4b5563;
-      }
-
-      /* Enhanced text for education cards */
-      .education-card h4 {
-        font-weight: 600;
-      }
-
-      .education-card p {
-        font-weight: 500;
-        color: #4b5563;
-      }
-
-      /* Enhanced text for skill sections */
-      .skill-bar h5 {
-        font-weight: 600;
-      }
-
-      /* Enhanced text for certification items */
-      .cert-item p {
-        font-weight: 500;
-        color: #4b5563;
-      }
-
-      /* Enhanced section headers */
-      .gradient-text {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 700;
-      }
-
-      .section-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        transform: translateY(30px);
-        overflow: hidden;
-      }
-
-      .section-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .section-card:hover {
-        transform: translateY(-5px) scale(1.01);
-        box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-      }
-
-      .project-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      .project-card.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .project-card:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 15px 30px rgba(79, 70, 229, 0.15);
-      }
-
-      .floating-nav {
-        position: fixed;
-        top: 50%;
-        right: 2rem;
-        transform: translateY(-50%);
-        z-index: 1000;
-        background: white;
-        padding: 1rem;
-        border-radius: 30px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        animation: fadeIn 0.5s ease forwards 1s;
-      }
-
-      .floating-nav a {
-        color: var(--dark-color);
-        transition: all 0.3s;
-        position: relative;
-      }
-
-      .floating-nav a:hover {
-        color: var(--primary-color);
-        transform: scale(1.1);
-      }
-
-      .skill-bar {
-        height: 30px;
-        border-radius: 15px;
-        overflow: hidden;
-        background: #e2e8f0;
-        position: relative;
-      }
-
-      .skill-progress {
-        height: 100%;
-        background: var(--gradient-1);
-        border-radius: 15px;
-        width: 0;
-        transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .education-card {
-        border-left: 4px solid var(--primary-color);
-        padding-left: 1.5rem;
-        margin-bottom: 2rem;
-        position: relative;
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .education-card.visible {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .education-card::before {
-        content: "";
-        position: absolute;
-        left: -10px;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        transform: scale(0);
-        transition: transform 0.3s ease;
-      }
-
-      .education-card.visible::before {
-        transform: scale(1);
-      }
-
-      .soft-skill-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        text-align: center;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        transform: scale(0.9);
-      }
-
-      .soft-skill-card.visible {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      .soft-skill-card:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.1);
-      }
-
-      .profile-img {
-        opacity: 0;
-        transform: scale(0.8);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 300px;
-        height: 300px;
-      }
-
-      .profile-img.visible {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      .social-btn {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .social-btn.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .social-btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      .hidden-project {
-        display: none;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .hidden-project.show {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      #showMoreBtn {
-        transition: all 0.3s ease;
-      }
-
-      #showMoreBtn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-      }
-      .certification-card {
-        background: #f8f9fa;
-        border-radius: 10px;
-        padding: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .certification-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .certification-scroll {
-        max-height: 300px;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-      }
-
-      .certification-scroll.expanded {
-        max-height: 1000px;
-      }
-
-      .cert-item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        background: white;
-        border-radius: 10px;
-        padding: 15px;
-        margin-bottom: 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-
-      .cert-item.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .certification-badge {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .badge {
-        font-size: 0.85rem;
-        padding: 0.5em 1em;
-        border-radius: 20px;
-      }
-
-      .project-card {
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .project-card:hover {
-        border-color: var(--primary-color);
-      }
-    </style>
   </head>
   <body>
     <!-- Floating Navigation -->
@@ -561,6 +219,48 @@
       </div>
     </section>
 
+    <section id="achievements" class="py-5">
+      <div class="container">
+        <div class="section-card p-5 animate-on-scroll">
+          <h2 class="text-center mb-5 display-4 fw-bold gradient-text">
+            Achievements
+          </h2>
+          <div class="row">
+            <!-- Hackathon Win -->
+            <div class="col-md-6 mb-4">
+              <div class="achievement-card">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-trophy text-white fa-2x"></i>
+                  </div>
+                  <h4 class="mb-0">1st Place - DataXplore 2025</h4>
+                </div>
+                <p class="text-muted">
+                    Won 1st place in a national-level Data Science competition organized by the Statistics Society of the University of Sri Jayewardenepura. The multi-stage challenge covered domains such as Exploratory Data Analysis, Machine Learning, Model Explainability, Time Series Analysis, and Statistical Reasoning.
+                </p>
+              </div>
+            </div>
+
+            <!-- Competition Recognition
+            <div class="col-md-6 mb-4">
+              <div class="achievement-card">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-award text-white fa-2x"></i>
+                  </div>
+                  <h4 class="mb-0">Finalist - Data Science Competition</h4>
+                </div>
+                <p class="text-muted">
+                  Selected as a finalist in the national data science
+                  competition for predictive analytics solution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="py-5">
       <div class="container">
@@ -571,7 +271,9 @@
 
           <div class="education-card">
             <h4>AI Engineer Intern</h4>
-            <p class="text-muted">Codebell PVT LTD, Homagama, Sri Lanka | 6 Months</p>
+            <p class="text-muted">
+              Codebell PVT LTD, Homagama, Sri Lanka | 6 Months
+            </p>
             <ul>
               <li>
                 Contributed to computer vision projects, assisting in developing
@@ -665,30 +367,30 @@
 
             <!-- Initially Hidden Projects -->
             <div class="col-md-6 mb-4 hidden-project">
-                <div class="project-card p-4">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="gradient-bg rounded-circle p-3 me-3">
-                      <i class="fas fa-brain text-white fa-2x"></i>
-                    </div>
-                    <h3 class="mb-0">Binary Image Classification</h3>
+              <div class="project-card p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-brain text-white fa-2x"></i>
                   </div>
-                  <p class="text-muted">
-                    Utilizing transfer learning with MobileNetV2/VGG16
-                    architectures to identify brain tumors in MRI scans.
-                  </p>
-                  <div class="mb-3">
-                    <span class="badge bg-primary me-2">TensorFlow</span>
-                    <span class="badge bg-primary me-2">Transfer Learning</span>
-                    <span class="badge bg-primary">Computer Vision</span>
-                  </div>
-                  <a
-                    href="https://github.com/NTRajapaksha/transferlearning"
-                    class="btn gradient-bg text-white rounded-pill px-4"
-                  >
-                    View Details <i class="fas fa-arrow-right ms-2"></i>
-                  </a>
+                  <h3 class="mb-0">Binary Image Classification</h3>
                 </div>
+                <p class="text-muted">
+                  Utilizing transfer learning with MobileNetV2/VGG16
+                  architectures to identify brain tumors in MRI scans.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary me-2">TensorFlow</span>
+                  <span class="badge bg-primary me-2">Transfer Learning</span>
+                  <span class="badge bg-primary">Computer Vision</span>
+                </div>
+                <a
+                  href="https://github.com/NTRajapaksha/transferlearning"
+                  class="btn gradient-bg text-white rounded-pill px-4"
+                >
+                  View Details <i class="fas fa-arrow-right ms-2"></i>
+                </a>
               </div>
+            </div>
 
             <div class="col-md-6 mb-4 hidden-project">
               <div class="project-card p-4">
@@ -717,58 +419,58 @@
             </div>
 
             <div class="col-md-6 mb-4 hidden-project">
-                <div class="project-card p-4">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="gradient-bg rounded-circle p-3 me-3">
-                      <i class="fas fa-hotel text-white fa-2x"></i>
-                    </div>
-                    <h3 class="mb-0">Booking Cancellation Analytics</h3>
+              <div class="project-card p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-hotel text-white fa-2x"></i>
                   </div>
-                  <p class="text-muted">
-                    Analyzed 27,500 booking records to identify patterns in
-                    cancellations and no-shows, optimizing revenue and resource
-                    planning.
-                  </p>
-                  <div class="mb-3">
-                    <span class="badge bg-primary me-2">Predictive Modeling</span>
-                    <span class="badge bg-primary me-2">Data Analysis</span>
-                    <span class="badge bg-primary">Customer Segmentation</span>
-                  </div>
-                  <a
-                    href="https://github.com/subhanu-dev/Hotel-reservation"
-                    class="btn gradient-bg text-white rounded-pill px-4"
-                  >
-                    View Details <i class="fas fa-arrow-right ms-2"></i>
-                  </a>
+                  <h3 class="mb-0">Booking Cancellation Analytics</h3>
                 </div>
+                <p class="text-muted">
+                  Analyzed 27,500 booking records to identify patterns in
+                  cancellations and no-shows, optimizing revenue and resource
+                  planning.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary me-2">Predictive Modeling</span>
+                  <span class="badge bg-primary me-2">Data Analysis</span>
+                  <span class="badge bg-primary">Customer Segmentation</span>
+                </div>
+                <a
+                  href="https://github.com/subhanu-dev/Hotel-reservation"
+                  class="btn gradient-bg text-white rounded-pill px-4"
+                >
+                  View Details <i class="fas fa-arrow-right ms-2"></i>
+                </a>
               </div>
+            </div>
 
             <!-- New Projects - Added to Hidden Projects -->
             <div class="col-md-6 mb-4 hidden-project">
-                <div class="project-card p-4">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="gradient-bg rounded-circle p-3 me-3">
-                      <i class="fas fa-chart-line text-white fa-2x"></i>
-                    </div>
-                    <h3 class="mb-0">Revenue Forecasting Tool</h3>
+              <div class="project-card p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-chart-line text-white fa-2x"></i>
                   </div>
-                  <p class="text-muted">
-                    Developed and deployed a Streamlit-based web application that
-                    uses LSTM models to predict stock prices for multiple brands.
-                  </p>
-                  <div class="mb-3">
-                    <span class="badge bg-primary me-2">Python</span>
-                    <span class="badge bg-primary me-2">Streamlit</span>
-                    <span class="badge bg-primary">LSTM</span>
-                  </div>
-                  <a
-                    href="https://github.com/NTRajapaksha/stock-Closing-Price-Prediction"
-                    class="btn gradient-bg text-white rounded-pill px-4"
-                  >
-                    View Details <i class="fas fa-arrow-right ms-2"></i>
-                  </a>
+                  <h3 class="mb-0">Revenue Forecasting Tool</h3>
                 </div>
+                <p class="text-muted">
+                  Developed and deployed a Streamlit-based web application that
+                  uses LSTM models to predict stock prices for multiple brands.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary me-2">Python</span>
+                  <span class="badge bg-primary me-2">Streamlit</span>
+                  <span class="badge bg-primary">LSTM</span>
+                </div>
+                <a
+                  href="https://github.com/NTRajapaksha/stock-Closing-Price-Prediction"
+                  class="btn gradient-bg text-white rounded-pill px-4"
+                >
+                  View Details <i class="fas fa-arrow-right ms-2"></i>
+                </a>
               </div>
+            </div>
 
             <div class="col-md-6 mb-4 hidden-project">
               <div class="project-card p-4">
@@ -798,31 +500,30 @@
             </div>
 
             <div class="col-md-6 mb-4 hidden-project">
-                <div class="project-card p-4">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="gradient-bg rounded-circle p-3 me-3">
-                      <i class="fas fa-comment-dots text-white fa-2x"></i>
-                    </div>
-                    <h3 class="mb-0">Amazon Sentiment Analysis</h3>
+              <div class="project-card p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-comment-dots text-white fa-2x"></i>
                   </div>
-                  <p class="text-muted">
-                    Analyzing user reviews from Amazon to determine sentiment
-                    towards products using pre-trained BERT model.
-                  </p>
-                  <div class="mb-3">
-                    <span class="badge bg-primary me-2">BERT</span>
-                    <span class="badge bg-primary me-2">NLP</span>
-                    <span class="badge bg-primary">Hugging Face</span>
-                  </div>
-                  <a
-                    href="https://github.com/NTRajapaksha/SentimentAnalysis"
-                    class="btn gradient-bg text-white rounded-pill px-4"
-                  >
-                    View Details <i class="fas fa-arrow-right ms-2"></i>
-                  </a>
+                  <h3 class="mb-0">Amazon Sentiment Analysis</h3>
                 </div>
+                <p class="text-muted">
+                  Analyzing user reviews from Amazon to determine sentiment
+                  towards products using pre-trained BERT model.
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary me-2">BERT</span>
+                  <span class="badge bg-primary me-2">NLP</span>
+                  <span class="badge bg-primary">Hugging Face</span>
+                </div>
+                <a
+                  href="https://github.com/NTRajapaksha/SentimentAnalysis"
+                  class="btn gradient-bg text-white rounded-pill px-4"
+                >
+                  View Details <i class="fas fa-arrow-right ms-2"></i>
+                </a>
               </div>
-  
+            </div>
 
             <div class="col-md-6 mb-4 hidden-project">
               <div class="project-card p-4">
@@ -851,30 +552,30 @@
             </div>
 
             <div class="col-md-6 mb-4 hidden-project">
-                <div class="project-card p-4">
-                  <div class="d-flex align-items-center mb-3">
-                    <div class="gradient-bg rounded-circle p-3 me-3">
-                      <i class="fas fa-chart-bar text-white fa-2x"></i>
-                    </div>
-                    <h3 class="mb-0">Business Decision-Making Dashboard</h3>
+              <div class="project-card p-4">
+                <div class="d-flex align-items-center mb-3">
+                  <div class="gradient-bg rounded-circle p-3 me-3">
+                    <i class="fas fa-chart-bar text-white fa-2x"></i>
                   </div>
-                  <p class="text-muted">
-                    Translated business requirements into interactive dashboards
-                    for real-time tracking of key performance indicators (KPIs).
-                  </p>
-                  <div class="mb-3">
-                    <span class="badge bg-primary me-2">Power BI</span>
-                    <span class="badge bg-primary me-2">Tableau</span>
-                    <span class="badge bg-primary">Data Visualization</span>
-                  </div>
-                  <a
-                    href="https://github.com/NTRajapaksha/Data-Visualizaton"
-                    class="btn gradient-bg text-white rounded-pill px-4"
-                  >
-                    View Details <i class="fas fa-arrow-right ms-2"></i>
-                  </a>
+                  <h3 class="mb-0">Business Decision-Making Dashboard</h3>
                 </div>
+                <p class="text-muted">
+                  Translated business requirements into interactive dashboards
+                  for real-time tracking of key performance indicators (KPIs).
+                </p>
+                <div class="mb-3">
+                  <span class="badge bg-primary me-2">Power BI</span>
+                  <span class="badge bg-primary me-2">Tableau</span>
+                  <span class="badge bg-primary">Data Visualization</span>
+                </div>
+                <a
+                  href="https://github.com/NTRajapaksha/Data-Visualizaton"
+                  class="btn gradient-bg text-white rounded-pill px-4"
+                >
+                  View Details <i class="fas fa-arrow-right ms-2"></i>
+                </a>
               </div>
+            </div>
 
             <div class="col-md-6 mb-4 hidden-project">
               <div class="project-card p-4">
@@ -1115,184 +816,6 @@
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Enhanced Animation JavaScript -->
-    <script>
-      // Intersection Observer for animations
-      const observerOptions = {
-        threshold: 0.2,
-        rootMargin: "0px 0px -50px 0px",
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-
-            if (entry.target.classList.contains("section-card")) {
-              entry.target
-                .querySelectorAll(".skill-progress")
-                .forEach((bar, index) => {
-                  setTimeout(() => {
-                    bar.style.width =
-                      bar.getAttribute("style").match(/width:\s*(\d+)%/)[1] +
-                      "%";
-                  }, index * 200);
-                });
-
-              entry.target
-                .querySelectorAll(".education-card")
-                .forEach((card, index) => {
-                  setTimeout(() => {
-                    card.classList.add("visible");
-                  }, index * 300);
-                });
-
-              entry.target
-                .querySelectorAll(".soft-skill-card")
-                .forEach((card, index) => {
-                  setTimeout(() => {
-                    card.classList.add("visible");
-                  }, index * 200);
-                });
-
-              entry.target
-                .querySelectorAll(".project-card")
-                .forEach((card, index) => {
-                  setTimeout(() => {
-                    card.classList.add("visible");
-                  }, index * 200);
-                });
-            }
-          }
-        });
-      }, observerOptions);
-
-      document
-        .querySelectorAll(
-          ".section-card, .project-card, .education-card, .soft-skill-card"
-        )
-        .forEach((element) => {
-          observer.observe(element);
-        });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const socialBtns = document.querySelectorAll(".social-btn");
-        socialBtns.forEach((btn, index) => {
-          setTimeout(() => {
-            btn.classList.add("visible");
-          }, 1500 + index * 200);
-        });
-
-        setTimeout(() => {
-          document.querySelector(".profile-img").classList.add("visible");
-        }, 800);
-
-        // Certification data
-        const certifications = [
-          "Google Data Analytics Professional Certificate",
-          "Google Business Intelligence Professional Certificate",
-          "Introduction to Data Science in Python - University of Michigan",
-          "Mathematics for Machine Learning and Data Science Specialization - DeepLearning.AI",
-          "Introduction to Statistics - Stanford University",
-          "Deep Learning Specialization - DeepLearning.AI",
-          "Machine Learning Specialization - Stanford University",
-          "Machine Learning in Production - DeepLearning.AI",
-          "Machine Learning on Google Cloud Specialization",
-          "Applied Machine Learning in Python - University of Michigan",
-          "Generative AI with Large Language Models - DeepLearning.AI",
-          "Google AI Essentials - Google",
-          "AWS Fundamentals Specialization - Amazon Web Services (AWS)",
-          "Introduction to Machine Learning on AWS",
-          "Azure Fundamentals - Simplilearn",
-          "AI/ML Engineer - Stage 1 & 2 - SLIIT",
-          "Exploratory Data Analysis for Machine Learning - IBM",
-          "Databases and SQL for Data Science with Python - IBM",
-          "TensorFlow - Keras Bootcamp - OpenCV University",
-          "Introduction to Git and GitHub - Google"
-        ];
-
-        const certScroll = document.getElementById("certScroll");
-        const showMoreCertsBtn = document.getElementById("showMoreCerts");
-
-        if (certScroll && showMoreCertsBtn) {
-          certifications.forEach((cert, index) => {
-            const certDiv = document.createElement("div");
-            certDiv.className = "cert-item";
-            certDiv.innerHTML = `
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-certificate text-primary me-3"></i>
-                            <p class="mb-0">${cert}</p>
-                        </div>
-                    `;
-            certScroll.appendChild(certDiv);
-          });
-
-          let isExpanded = false;
-
-          showMoreCertsBtn.addEventListener("click", () => {
-            isExpanded = !isExpanded;
-            certScroll.classList.toggle("expanded");
-
-            const certItems = document.querySelectorAll(".cert-item");
-            certItems.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.toggle("visible", isExpanded);
-              }, index * 100);
-            });
-
-            showMoreCertsBtn.innerHTML = isExpanded
-              ? 'Show Less <i class="fas fa-chevron-up ms-2"></i>'
-              : 'Show More <i class="fas fa-chevron-down ms-2"></i>';
-          });
-
-          const visibleCerts = Array.from(
-            document.querySelectorAll(".cert-item")
-          ).slice(0, 2);
-          visibleCerts.forEach((cert, index) => {
-            setTimeout(() => {
-              cert.classList.add("visible");
-            }, index * 200);
-          });
-        }
-      });
-
-      // Smooth scroll functionality
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Project reveal functionality
-      const showMoreBtn = document.getElementById("showMoreBtn");
-      const hiddenProjects = document.querySelectorAll(".hidden-project");
-      let projectsVisible = false;
-
-      showMoreBtn.addEventListener("click", () => {
-        hiddenProjects.forEach((project, index) => {
-          setTimeout(() => {
-            if (!projectsVisible) {
-              project.classList.add("show");
-            } else {
-              project.classList.remove("show");
-            }
-          }, index * 200);
-        });
-
-        projectsVisible = !projectsVisible;
-        showMoreBtn.innerHTML = projectsVisible
-          ? 'Show Less <i class="fas fa-chevron-up ms-2"></i>'
-          : 'Show More Projects <i class="fas fa-chevron-down ms-2"></i>';
-
-        showMoreBtn.classList.add("animate__animated", "animate__pulse");
-        setTimeout(() => {
-          showMoreBtn.classList.remove("animate__animated", "animate__pulse");
-        }, 1000);
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
