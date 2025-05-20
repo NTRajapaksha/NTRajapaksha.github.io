@@ -220,3 +220,38 @@ const observerOptions = {
       });
     }
   }
+
+  // Update this function or add it if it doesn't exist
+document.addEventListener("DOMContentLoaded", () => {
+  // Existing code...
+  
+  // Setup floating navigation with achievement section
+  setupFloatingNav();
+});
+
+// Add this new function to script.js
+function setupFloatingNav() {
+  // This assumes you have a floating-nav element in your HTML with nav links
+  const navLinks = document.querySelectorAll('.floating-nav a');
+  const sections = document.querySelectorAll('section');
+  
+  // Add active class to the current section's nav icon
+  window.addEventListener('scroll', () => {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 200)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+}
