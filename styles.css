@@ -475,17 +475,12 @@
   }
 
   /* Achievement icon in floating nav */
-.nav-icon {
-  font-size: 1.3rem;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
-  transition: all 0.3s ease;
-}
+  .nav-icon {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 .nav-icon:hover {
   background-color: rgba(79, 70, 229, 0.1);
@@ -496,36 +491,44 @@
   background-color: rgba(79, 70, 229, 0.1);
 }
 
-/* Improved responsive navigation */
 @media (max-width: 768px) {
   .floating-nav {
-    padding: 0.7rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    align-items: center;
+    padding: 0.8rem 0.5rem;
+    border-radius: 15px 15px 0 0;
+    background: white;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
   }
   
   .floating-nav .d-flex {
     width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
     padding: 0 1rem;
   }
   
   .nav-icon {
-    margin-bottom: 0;
-    font-size: 1.5rem;
-    width: auto;
-    height: auto;
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 8px;
   }
 }
 
 @media (max-width: 576px) {
   .nav-icon {
     font-size: 1.2rem;
-  }
-  
-  .floating-nav .d-flex {
-    padding: 0 0.5rem;
+    padding: 6px;
   }
 }
+
 
