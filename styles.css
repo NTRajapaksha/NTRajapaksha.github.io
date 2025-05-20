@@ -473,3 +473,59 @@
       padding: 2rem !important;
     }
   }
+
+  /* Achievement icon in floating nav */
+.nav-icon {
+  font-size: 1.3rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.nav-icon.active {
+  color: var(--primary-color);
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+/* Improved responsive navigation */
+@media (max-width: 768px) {
+  .floating-nav {
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .floating-nav .d-flex {
+    width: 100%;
+    justify-content: space-between !important;
+    padding: 0 1rem;
+  }
+  
+  .nav-icon {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    width: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-icon {
+    font-size: 1.2rem;
+  }
+  
+  .floating-nav .d-flex {
+    padding: 0 0.5rem;
+  }
+}
+
