@@ -27,32 +27,33 @@
     <!-- Floating Navigation -->
     <nav class="floating-nav">
       <div class="d-flex flex-column gap-3">
-        <a href="#home" class="btn btn-link"
-          ><i class="fas fa-home fa-lg"></i
-        ></a>
-        <a href="#about" class="btn btn-link"
-          ><i class="fas fa-user fa-lg"></i
-        ></a>
-        <a href="#education" class="btn btn-link"
-          ><i class="fas fa-graduation-cap fa-lg"></i
-        ></a>
-        <a href="#achievements" class="nav-icon">
-          <i class="fas fa-trophy"></i>
+        <a href="#home" class="text-center" title="Home">
+          <i class="fas fa-home fa-lg"></i>
         </a>
-        <a href="#experience" class="btn btn-link"
-          ><i class="fas fa-briefcase fa-lg"></i
-        ></a>
-        <a href="#projects" class="btn btn-link"
-          ><i class="fas fa-code fa-lg"></i
-        ></a>
-        <a href="#skills" class="btn btn-link"
-          ><i class="fas fa-chart-bar fa-lg"></i
-        ></a>
-        <a href="#soft-skills" class="btn btn-link"
-          ><i class="fas fa-brain fa-lg"></i
-        ></a>
+        <a href="#about" class="text-center" title="About">
+          <i class="fas fa-user fa-lg"></i>
+        </a>
+        <a href="#education" class="text-center" title="Education">
+          <i class="fas fa-graduation-cap fa-lg"></i>
+        </a>
+        <a href="#achievements" class="text-center" title="Achievements">
+          <i class="fas fa-trophy fa-lg"></i>
+        </a>
+        <a href="#experience" class="text-center" title="Skills">
+          <i class="fas fa-briefcase fa-lg"></i>
+        </a>
+        <a href="#projects" class="text-center" title="Skills">
+          <i class="fas fa-code fa-lg"></i>
+        </a>
+        <a href="#skills" class="text-center" title="Projects">
+          <i class="fas fa-chart-bar fa-lg"></i>
+        </a>
+        <a href="#soft-skills" class="text-center" title="Skills">
+          <i class="fas fa-brain fa-lg"></i>
+        </a>
       </div>
     </nav>
+    
 
     <!-- Hero Section -->
     <section id="home" class="min-vh-100 d-flex align-items-center">
@@ -305,320 +306,470 @@
     </section>
     </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-      <div class="container">
-        <div class="section-card p-5 animate-on-scroll">
-          <h2 class="text-center mb-5 display-4 fw-bold gradient-text">
-            Projects
-          </h2>
-          <div class="row" id="projectsContainer">
-            <!-- IoT Energy Consumption Project -->
-            <div class="col-md-6 mb-4">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-bolt text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">IoT Energy Consumption Anomaly Detection</h3>
-                </div>
-                <p class="text-muted">
-                  Developed a Lambda Architecture-based system for analyzing IoT
-                  energy consumption data with batch and real-time processing
-                  for anomaly detection.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Apache Hadoop</span>
-                  <span class="badge bg-primary me-2">Apache Spark</span>
-                  <span class="badge bg-primary">Kafka</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/iot-lambda"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <div class="section-card p-5 animate-on-scroll">
+      <h2 class="text-center mb-5 display-4 fw-bold gradient-text">
+        Projects
+      </h2>
+      <div class="row" id="projectsContainer">
+        <!-- IoT Energy Consumption Project -->
+        <div class="col-md-6 mb-4">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-bolt text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">IoT Energy Consumption Anomaly Detection</h3>
+            </div>
+            <p class="text-muted">
+              Developed a Lambda Architecture-based system for analyzing IoT
+              energy consumption data with batch and real-time processing
+              for anomaly detection.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache Hadoop" class="tech-logo">
+                  Apache Hadoop
+                </span>
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache Spark" class="tech-logo">
+                  Apache Spark
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-stream tech-icon"></i>
+                  Kafka
+                </span>
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+                  Docker
+                </span>
               </div>
             </div>
-
-            <!-- SentiViz Project -->
-            <div class="col-md-6 mb-4">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-comment-dots text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">SentiViz: Text Sentiment Analysis Tool</h3>
-                </div>
-                <p class="text-muted">
-                  Developed an interactive sentiment analysis application that
-                  combines RoBERTa and VADER technologies with real-time
-                  visualizations.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">PyTorch</span>
-                  <span class="badge bg-primary me-2">Hugging Face</span>
-                  <span class="badge bg-primary">Flask</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/Project-SentiViz"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- Initially Hidden Projects -->
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-brain text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Binary Image Classification</h3>
-                </div>
-                <p class="text-muted">
-                  Utilizing transfer learning with MobileNetV2/VGG16
-                  architectures to identify brain tumors in MRI scans.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">TensorFlow</span>
-                  <span class="badge bg-primary me-2">Transfer Learning</span>
-                  <span class="badge bg-primary">Computer Vision</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/transferlearning"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-home text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Colombo Apartments Pricing Analysis</h3>
-                </div>
-                <p class="text-muted">
-                  Conducted comprehensive exploratory data analysis on Colombo's
-                  rental apartment market, analyzing 250+ property listings.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Python</span>
-                  <span class="badge bg-primary me-2">Pandas</span>
-                  <span class="badge bg-primary">Matplotlib</span>
-                </div>
-                <a
-                  href="https://github.com/subhanu-dev/Real-Estate-Analysis"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-hotel text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Booking Cancellation Analytics</h3>
-                </div>
-                <p class="text-muted">
-                  Analyzed 27,500 booking records to identify patterns in
-                  cancellations and no-shows, optimizing revenue and resource
-                  planning.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Predictive Modeling</span>
-                  <span class="badge bg-primary me-2">Data Analysis</span>
-                  <span class="badge bg-primary">Customer Segmentation</span>
-                </div>
-                <a
-                  href="https://github.com/subhanu-dev/Hotel-reservation"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- New Projects - Added to Hidden Projects -->
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-chart-line text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Revenue Forecasting Tool</h3>
-                </div>
-                <p class="text-muted">
-                  Developed and deployed a Streamlit-based web application that
-                  uses LSTM models to predict stock prices for multiple brands.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Python</span>
-                  <span class="badge bg-primary me-2">Streamlit</span>
-                  <span class="badge bg-primary">LSTM</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/stock-Closing-Price-Prediction"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-file-alt text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Smart ATS Resume Optimizer</h3>
-                </div>
-                <p class="text-muted">
-                  User-friendly web application using Streamlit and Google's
-                  Generative AI to enhance resume quality across different
-                  experience levels.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Streamlit</span>
-                  <span class="badge bg-primary me-2">Generative AI</span>
-                  <span class="badge bg-primary">NLP</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/Smart-ATS"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-comment-dots text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Amazon Sentiment Analysis</h3>
-                </div>
-                <p class="text-muted">
-                  Analyzing user reviews from Amazon to determine sentiment
-                  towards products using pre-trained BERT model.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">BERT</span>
-                  <span class="badge bg-primary me-2">NLP</span>
-                  <span class="badge bg-primary">Hugging Face</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/SentimentAnalysis"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-users-slash text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Customer Churn Prediction</h3>
-                </div>
-                <p class="text-muted">
-                  Predicts customer churn using XGBoost, Random Forest, and
-                  Logistic Regression with hyperparameter tuning.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">XGBoost</span>
-                  <span class="badge bg-primary me-2">Random Forest</span>
-                  <span class="badge bg-primary">Hyperparameter Tuning</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/Churn-Prediction"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-chart-bar text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Business Decision-Making Dashboard</h3>
-                </div>
-                <p class="text-muted">
-                  Translated business requirements into interactive dashboards
-                  for real-time tracking of key performance indicators (KPIs).
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">Power BI</span>
-                  <span class="badge bg-primary me-2">Tableau</span>
-                  <span class="badge bg-primary">Data Visualization</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/Data-Visualizaton"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4 hidden-project">
-              <div class="project-card p-4">
-                <div class="d-flex align-items-center mb-3">
-                  <div class="gradient-bg rounded-circle p-3 me-3">
-                    <i class="fas fa-user-tag text-white fa-2x"></i>
-                  </div>
-                  <h3 class="mb-0">Customer Segmentation</h3>
-                </div>
-                <p class="text-muted">
-                  A model that uses KMeans algorithm for customer segmentation
-                  by implementing the Elbow method.
-                </p>
-                <div class="mb-3">
-                  <span class="badge bg-primary me-2">KMeans</span>
-                  <span class="badge bg-primary me-2">Clustering</span>
-                  <span class="badge bg-primary">Elbow Method</span>
-                </div>
-                <a
-                  href="https://github.com/NTRajapaksha/Customer-Segmentation"
-                  class="btn gradient-bg text-white rounded-pill px-4"
-                >
-                  View Details <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-center mt-4">
-            <button
-              id="showMoreBtn"
-              class="btn btn-lg gradient-bg text-white rounded-pill px-5"
+            <a
+              href="https://github.com/NTRajapaksha/iot-lambda"
+              class="btn gradient-bg text-white rounded-pill px-4"
             >
-              Show More Projects <i class="fas fa-chevron-down ms-2"></i>
-            </button>
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- SentiViz Project -->
+        <div class="col-md-6 mb-4">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-comment-dots text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">SentiViz: Text Sentiment Analysis Tool</h3>
+            </div>
+            <p class="text-muted">
+              Developed an interactive sentiment analysis application that
+              combines RoBERTa and VADER technologies with real-time
+              visualizations.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-robot tech-icon"></i>
+                  Hugging Face
+                </span>
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="tech-logo">
+                  Flask
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/Project-SentiViz"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Initially Hidden Projects -->
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-brain text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Binary Image Classification</h3>
+            </div>
+            <p class="text-muted">
+              Utilizing transfer learning with MobileNetV2/VGG16
+              architectures to identify brain tumors in MRI scans.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="tech-logo">
+                  TensorFlow
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-exchange-alt tech-icon"></i>
+                  Transfer Learning
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-eye tech-icon"></i>
+                  Computer Vision
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/transferlearning"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-home text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Colombo Apartments Pricing Analysis</h3>
+            </div>
+            <p class="text-muted">
+              Conducted comprehensive exploratory data analysis on Colombo's
+              rental apartment market, analyzing 250+ property listings.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-table tech-icon"></i>
+                  Pandas
+                </span>
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="tech-logo">
+                  Matplotlib
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-line tech-icon"></i>
+                  Scikit-learn
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/subhanu-dev/Real-Estate-Analysis"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-hotel text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Booking Cancellation Analytics</h3>
+            </div>
+            <p class="text-muted">
+              Analyzed 27,500 booking records to identify patterns in
+              cancellations and no-shows, optimizing revenue and resource
+              planning.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-line tech-icon"></i>
+                  Scikit-learn
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-bar tech-icon"></i>
+                  Data Analysis
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-users tech-icon"></i>
+                  Customer Segmentation
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/subhanu-dev/Hotel-reservation"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-chart-line text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Revenue Forecasting Tool</h3>
+            </div>
+            <p class="text-muted">
+              Developed and deployed a Streamlit-based web application that
+              uses LSTM models to predict stock prices for multiple brands.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-stream tech-icon"></i>
+                  Streamlit
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-brain tech-icon"></i>
+                  LSTM
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/stock-Closing-Price-Prediction"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-file-alt text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Smart ATS Resume Optimizer</h3>
+            </div>
+            <p class="text-muted">
+              User-friendly web application using Streamlit and Google's
+              Generative AI to enhance resume quality across different
+              experience levels.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-stream tech-icon"></i>
+                  Streamlit
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-robot tech-icon"></i>
+                  Generative AI
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-language tech-icon"></i>
+                  NLP
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/Smart-ATS"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-comment-dots text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Amazon Sentiment Analysis</h3>
+            </div>
+            <p class="text-muted">
+              Analyzing user reviews from Amazon to determine sentiment
+              towards products using pre-trained BERT model.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-robot tech-icon"></i>
+                  BERT
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-language tech-icon"></i>
+                  NLP
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-robot tech-icon"></i>
+                  Hugging Face
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/SentimentAnalysis"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-users-slash text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Customer Churn Prediction</h3>
+            </div>
+            <p class="text-muted">
+              Predicts customer churn using XGBoost, Random Forest, and
+              Logistic Regression with hyperparameter tuning.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <i class="fas fa-tree tech-icon"></i>
+                  XGBoost
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-tree tech-icon"></i>
+                  Random Forest
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-cogs tech-icon"></i>
+                  Hyperparameter Tuning
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/Churn-Prediction"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-chart-bar text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Business Decision-Making Dashboard</h3>
+            </div>
+            <p class="text-muted">
+              Translated business requirements into interactive dashboards
+              for real-time tracking of key performance indicators (KPIs).
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <i class="fas fa-chart-pie tech-icon"></i>
+                  Power BI
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-bar tech-icon"></i>
+                  Tableau
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-line tech-icon"></i>
+                  Data Visualization
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/Data-Visualizaton"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4 hidden-project">
+          <div class="project-card p-4">
+            <div class="d-flex align-items-center mb-3">
+              <div class="gradient-bg rounded-circle p-3 me-3">
+                <i class="fas fa-user-tag text-white fa-2x"></i>
+              </div>
+              <h3 class="mb-0">Customer Segmentation</h3>
+            </div>
+            <p class="text-muted">
+              A model that uses KMeans algorithm for customer segmentation
+              by implementing the Elbow method.
+            </p>
+            <div class="tech-stack mb-3">
+              <div class="tech-logos">
+                <span class="tech-tag">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+                  Python
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-chart-line tech-icon"></i>
+                  Scikit-learn
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-circle-notch tech-icon"></i>
+                  KMeans
+                </span>
+                <span class="tech-tag">
+                  <i class="fas fa-layer-group tech-icon"></i>
+                  Clustering
+                </span>
+              </div>
+            </div>
+            <a
+              href="https://github.com/NTRajapaksha/Customer-Segmentation"
+              class="btn gradient-bg text-white rounded-pill px-4"
+            >
+              View Details <i class="fas fa-arrow-right ms-2"></i>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+
+      <div class="text-center mt-4">
+        <button
+          id="showMoreBtn"
+          class="btn btn-lg gradient-bg text-white rounded-pill px-5"
+        >
+          Show More Projects <i class="fas fa-chevron-down ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
 
     <section id="skills" class="py-5">
       <div class="container">
