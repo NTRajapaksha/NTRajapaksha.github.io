@@ -97,6 +97,9 @@ const observerOptions = {
     
     // Setup project reveal functionality
     setupProjectReveal();
+
+    //Setup skill tag animations
+    setupSkillTagAnimation();
   });
   
   // Setup certifications
@@ -286,5 +289,22 @@ function setupFloatingNav() {
         link.classList.add('active');
       }
     });
+  });
+}
+
+function setupSkillTagAnimation() {
+  const skillTags = document.querySelectorAll('.skill-tag');
+  
+  skillTags.forEach((tag, index) => {
+      setTimeout(() => {
+          tag.style.opacity = '0';
+          tag.style.transform = 'translateY(20px)';
+          tag.style.transition = 'all 0.5s ease';
+          
+          setTimeout(() => {
+              tag.style.opacity = '1';
+              tag.style.transform = 'translateY(0)';
+          }, index * 100);
+      }, 500);
   });
 }
