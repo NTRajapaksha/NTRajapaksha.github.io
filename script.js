@@ -145,32 +145,46 @@ const observerOptions = {
       });
   
       let isExpanded = false;
+      
+      // Initially show first 3 certifications (increased from 2)
+      const initialVisibleCount = 3;
+      const certItems = document.querySelectorAll(".cert-item");
+      
+      // Make first few certificates visible initially
+      certItems.forEach((cert, index) => {
+        if (index < initialVisibleCount) {
+          setTimeout(() => {
+            cert.classList.add("visible");
+          }, index * 200);
+        }
+      });
   
       // Setup show more/less functionality
       showMoreCertsBtn.addEventListener("click", () => {
         isExpanded = !isExpanded;
         certScroll.classList.toggle("expanded");
   
-        const certItems = document.querySelectorAll(".cert-item");
-        certItems.forEach((item, index) => {
-          setTimeout(() => {
-            item.classList.toggle("visible", isExpanded);
-          }, index * 100);
-        });
+        if (isExpanded) {
+          // Show all certifications with staggered animation
+          certItems.forEach((item, index) => {
+            if (index >= initialVisibleCount) {
+              setTimeout(() => {
+                item.classList.add("visible");
+              }, (index - initialVisibleCount) * 100);
+            }
+          });
+        } else {
+          // Hide certifications beyond the initial count
+          certItems.forEach((item, index) => {
+            if (index >= initialVisibleCount) {
+              item.classList.remove("visible");
+            }
+          });
+        }
   
         showMoreCertsBtn.innerHTML = isExpanded
           ? 'Show Less <i class="fas fa-chevron-up ms-2"></i>'
           : 'Show More <i class="fas fa-chevron-down ms-2"></i>';
-      });
-  
-      // Make first two certificates visible
-      const visibleCerts = Array.from(
-        document.querySelectorAll(".cert-item")
-      ).slice(0, 2);
-      visibleCerts.forEach((cert, index) => {
-        setTimeout(() => {
-          cert.classList.add("visible");
-        }, index * 200);
       });
     }
   }
@@ -198,17 +212,22 @@ const observerOptions = {
   
     if (showMoreBtn && hiddenProjects.length > 0) {
       showMoreBtn.addEventListener("click", () => {
+        projectsVisible = !projectsVisible; // Toggle state first
+  
         hiddenProjects.forEach((project, index) => {
           setTimeout(() => {
-            if (!projectsVisible) {
+            if (projectsVisible) {
               project.classList.add("show");
+              project.style.display = "block";
             } else {
               project.classList.remove("show");
+              setTimeout(() => {
+                project.style.display = "none";
+              }, 500);
             }
           }, index * 200);
         });
   
-        projectsVisible = !projectsVisible;
         showMoreBtn.innerHTML = projectsVisible
           ? 'Show Less <i class="fas fa-chevron-up ms-2"></i>'
           : 'Show More Projects <i class="fas fa-chevron-down ms-2"></i>';
@@ -217,6 +236,20 @@ const observerOptions = {
         setTimeout(() => {
           showMoreBtn.classList.remove("animate__animated", "animate__pulse");
         }, 1000);
+  
+        // Optional: scroll to projects section when collapsing
+        if (!projectsVisible) {
+          const projectsSection = document.getElementById("projects");
+          if (projectsSection) {
+            projectsSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      });
+  
+      // On load, ensure hidden projects are hidden
+      hiddenProjects.forEach((project) => {
+        project.classList.remove("show");
+        project.style.display = "none";
       });
     }
   }
